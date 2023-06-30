@@ -1,0 +1,67 @@
+Constantinescu Delia-Georgiana
+Grupa 313 CA
+Tema 2 PCLP
+
+Function main():
+	I used a decision making structure switch() in order to read the
+code letter from stdin and call each respective function. When the code Q is
+read from stdin and there are still matrices loaded in the memory, all
+resources are freed.
+
+Function load():
+-allocating memory depending on whether it is the first time loading a
+matrix
+-using an external function matrix() to read the number of lines, columns
+and the elements of the matrix from stdin
+
+Function determine():
+-reading an index from stdin and printing the respective dimensions if the
+matrix has been previously loaded
+
+Function print_matrix():
+-reading an index from stdin and printing it to stdout if the matrix has 
+been previously loaded
+
+Function crop():
+-reading the cropping coordinates from stdin and constructing the cropped
+matrix in an auxiliary variable
+-the cropped matrix is resulted from taking each of the numbers in the
+first set read from stdin and pairing them with each of the numbers in the
+second set in order to obtain the positions of the elements in the initial
+matrix that should be transferred in the cropped matrix
+-after the crop is made, memory of the initial matrix is freed and
+reallocated and the matrix is replaced with the crop
+
+Function multiply():
+-reading 2 indexes from stdin and making sure that the corresponding
+matrices are loaded in the memory and their dimensions allow the
+multiplication
+-if the necessary conditions are fulfilled, the multiplication is done
+using an auxiliary matrix (basic matrix multiplication algorithm) and 
+modular arithmetic (function mod)
+-finally, memory is reallocated and the resulted matrix is loaded in the
+memory
+
+Function sort():
+-calculating the sum of the elements of each matrix using the function sum()
+-sorting the matrices in ascending orded depending on their corresponding
+sum (selection sort algorithm)
+
+Function transpose():
+-transposing the matrix with the given index using an auxiliary variable 
+(transp)
+-the new matrix is obtained by switching the indexes of the elements from
+the initial matrix
+-the memory of the initial matrix is freed and the matrix is replaced with
+its transposition
+
+Function free_mat():
+-moving each matrix following the one with the given index, and their
+respective dimensions, on the previous position in order to simulate
+deleting the matrix
+-freeing the memory of the last matrix and reallocating the memory
+efficiently
+
+Function quit():
+-if there are still matrices loaded in the memory, all resources used in
+the program are freed
